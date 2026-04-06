@@ -1,6 +1,8 @@
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:1f6feb&height=200&section=header&text=Hey!%20I'm%20Harshita&fontSize=40&fontColor=ffffff" />
+
+  <p align="center">
+  <img src="https://raw.githubusercontent.com/Harshita-Agrawal5/Harshita-Agrawal5/main/Harshita%20Agrawal%20Full%20Stack%20Developer%20%20Backend%20%26%20Systems.png" />
 </p>
+  
 
 <h3 align="center">Full Stack Developer</h3>
 
