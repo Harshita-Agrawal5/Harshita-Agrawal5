@@ -1,8 +1,6 @@
-
-  <p align="center">
-  <img src="https://raw.githubusercontent.com/Harshita-Agrawal5/Harshita-Agrawal5/main/Harshita%20Agrawal%20Full%20Stack%20Developer%20%20Backend%20%26%20Systems.png" />
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Harshita-Agrawal5/Harshita-Agrawal5/main/Untitled%20design.png" />
 </p>
-  
 
 <h3 align="center">Full Stack Developer</h3>
 
