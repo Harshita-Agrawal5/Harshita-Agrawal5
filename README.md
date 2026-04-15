@@ -2,69 +2,73 @@
   <img src="https://raw.githubusercontent.com/Harshita-Agrawal5/Harshita-Agrawal5/main/Untitled%20design.png" />
 </p>
 
-<h3 align="center">Full Stack Developer</h3>
+<h1 align="center">Harshita Agrawal</h1>
+<h3 align="center">Full Stack Developer | Backend & Distributed Systems Enthusiast</h3>
 
----
-
-### 👋 Hi, I'm Harshita Agrawal
-
-- 💻 I build **full-stack applications and backend systems**
-- ⚙️ Interested in **distributed systems & real-world problem solving**
-- 🌱 Currently learning **AI + scalable architectures**
-- 📫 Reach me at: **harshitaaagrawal24@gmail.com**
-
----
-
-### 🚀 Projects
-
-- 🔹 **ResourceHub**  
-  Distributed system for sharing RAM, GPU, and storage across nodes  
-
-- 🔹 **Blogging Platform**  
-  Full-stack app with REST APIs and database integration  
-
-- 🔹 **Real-Time News App**  
-  API-based news aggregation with search & filtering  
-
-- 🔹 **Restaurant Chatbot**  
-  Python-based chatbot for automated ordering system  
-
----
-
-### 🌐 Connect with me
-
-<p align="left">
-<a href="https://github.com/Harshita-Agrawal5">
-<img src="https://skillicons.dev/icons?i=github" />
-</a>
-<a href="YOUR-LINKEDIN">
-<img src="https://skillicons.dev/icons?i=linkedin" />
-</a>
+<p align="center">
+  <a href="https://harshita-agrawal5.github.io/harshita-s_portfolio">Portfolio</a> •
+  <a href="mailto:harshitaaagrawal24@gmail.com">Email</a> •
+  <a href="https://www.linkedin.com/in/harshita-agrawal-79b781346">LinkedIn</a>
 </p>
 
 ---
 
-### 🛠️ Languages & Tools
+## 🚀 Summary
 
-<p>
-<img src="https://skillicons.dev/icons?i=java,python,cpp,js,spring,mysql,git,linux" />
+Full-stack developer focused on building **scalable backend systems and real-world applications**.  
+Interested in **distributed systems, system design, and AI-driven applications**.
+
+---
+
+## ⚙️ Core Skills
+
+- **Languages:** Java, Python, C++, JavaScript  
+- **Backend:** Spring Boot, Django  
+- **Databases:** MySQL  
+- **Concepts:** REST APIs, System Design, Distributed Systems  
+- **Tools:** Git, Linux  
+
+---
+
+## 💡 Projects
+
+### 🔹 ResourceHub
+Distributed system for sharing compute resources (CPU/GPU/RAM) across nodes  
+→ Focus: scalability, system design, distributed architecture
+
+### 🔹 Smart Medicine Tracker (Pill Dispenser System)
+Django-based healthcare system that tracks patient medication schedules and pill intake status  
+→ REST APIs + real-time tracking logic
+
+### 🔹 Blogging Platform
+Full-stack application with authentication, CRUD operations, and REST APIs
+
+### 🔹 Real-Time News App
+API-based news aggregator with search and filtering features
+
+### 🔹 Restaurant Chatbot
+Python-based chatbot for automated ordering and interaction flow
+
+---
+
+## 📊 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Harshita-Agrawal5&show_icons=true&theme=tokyonight" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Harshita-Agrawal5&theme=tokyonight" />
 </p>
 
 ---
 
-### 📊 GitHub Stats
+## 📫 Contact
 
-<p>
-<img src="https://github-readme-stats.vercel.app/api?username=Harshita-Agrawal5&show_icons=true&theme=tokyonight" />
-</p>
+- 📧 Email: harshitaaagrawal24@gmail.com  
+- 🌐 Portfolio: https://harshita-agrawal5.github.io/harshita-s_portfolio  
+- 💼 LinkedIn: https://www.linkedin.com/in/harshita-agrawal-79b781346  
 
-<p>
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Harshita-Agrawal5&theme=tokyonight" />
-</p>
 
-<!--
-**Harshita-Agrawal5/Harshita-Agrawal5** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
 
 
