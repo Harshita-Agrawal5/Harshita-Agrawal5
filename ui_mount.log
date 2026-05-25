@@ -1,0 +1,483 @@
+[2026-04-16 16:23:19] UI started
+[2026-04-16 16:28:31] Starting mount: '/mnt/c/Users/Prajwal V/Downloads/cc 2 miniproject/cc 2 miniproject/mini_unionfs' -o lower=,upper= ''
+[2026-04-16 16:28:31] Error: both 'lower' and 'upper' options are required
+[2026-04-16 16:28:31] Usage: /mnt/c/Users/Prajwal V/Downloads/cc 2 miniproject/cc 2 miniproject/mini_unionfs -o lower=/path/to/lower,upper=/path/to/upper /mount/point
+[2026-04-16 16:28:31] Mount process exited with code 1
+[2026-04-16 16:57:07] Running make build
+[2026-04-16 16:57:08] Running make build
+[2026-04-16 16:57:09] Cleaning up...
+rm -f mini_unionfs
+Clean complete!
+Compiling Mini Union FileSystem...
+gcc -Wall -Wextra -D_FILE_OFFSET_BITS=64 -I/usr/include/fuse3 -I/usr/include/fuse3  -o mini_unionfs mini_unionfs.c -lfuse3 -lpthread 
+Successfully compiled: mini_unionfs
+[2026-04-16 16:57:09] Cleaning up...
+rm -f mini_unionfs
+Clean complete!
+Compiling Mini Union FileSystem...
+gcc -Wall -Wextra -D_FILE_OFFSET_BITS=64 -I/usr/include/fuse3 -I/usr/include/fuse3  -o mini_unionfs mini_unionfs.c -lfuse3 -lpthread 
+Successfully compiled: mini_unionfs
+[2026-04-16 16:57:16] Running test_unionfs.sh
+[2026-04-16 16:57:17] Running test_unionfs.sh
+[2026-04-16 16:57:18] Running test_unionfs.sh
+[2026-04-16 16:57:18] Running test_unionfs.sh
+[2026-04-16 16:57:20] Running make build
+[2026-04-16 16:57:20] [H[2J[3J[0;34m
+╔══════════════════════════════════════════════════════════════╗
+║   Mini Union File System - Comprehensive Test Suite          ║
+║   Testing FUSE implementation with Copy-on-Write & Whiteout  ║
+╚══════════════════════════════════════════════════════════════╝
+[0m
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 1: SETUP[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+[0;34m[INFO][0m Checking dependencies...
+[0;32m[PASS][0m All dependencies found
+[0;34m[INFO][0m Compiling mini_unionfs...
+[0;32m[PASS][0m Compilation successful: /mnt/c/Users/Prajwal V/Downloads/cc 2 miniproject/cc 2 miniproject/mini_unionfs
+[0;34m[INFO][0m Setting up test directories...
+[0;34m[INFO][0m Cleaning up test directories...
+[0;32m[PASS][0m Cleanup complete
+[0;32m[PASS][0m Test directories created
+[0;34m[INFO][0m   Lower dir: /home/prajwal/unionfs_test/lower
+[0;34m[INFO][0m   Upper dir: /home/prajwal/unionfs_test/upper
+[0;34m[INFO][0m   Mount dir: /home/prajwal/unionfs_test/mount
+[0;34m[INFO][0m Mounting union filesystem...
+[0;32m[PASS][0m Filesystem mounted (PID: 2356)
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 2: BASIC OPERATIONS[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mRead file from lower layer[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Read file from lower layer
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mDirectory listing shows merged view[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Directory listing shows merged view
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mCreate new file in upper layer[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Create new file in upper layer
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mCreate new directory in merged view[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Create new directory in merged view
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mCreate files in new directory[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Create files in new directory
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 3: ADVANCED FEATURES (CoW & Whiteout)[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mCopy-on-Write: Modify lower file[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Copy-on-Write: Modify lower file
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mCopy-on-Write: Modify nested file from lower[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Copy-on-Write: Modify nested file from lower
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mDelete lower file (create whiteout)[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Delete lower file (create whiteout)
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mUpper layer files shadow lower layer[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Upper layer files shadow lower layer
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 4: COMPLEX SCENARIOS[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mAccess nested directory from lower[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Access nested directory from lower
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mDelete file created in upper layer[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Delete file created in upper layer
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mDirectory listing reflects all changes[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Directory listing reflects all changes
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mMultiple CoW operations on same file[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Multiple CoW operations on same file
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mNested directory creation and removal[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Nested directory creation and removal
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 5: CLEANUP[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+[0;34m[INFO][0m Unmounting filesystem...
+[0;32m[PASS][0m Filesystem unmounted
+[0;34m[INFO][0m Cleaning up test directories...
+[0;32m[PASS][0m Cleanup complete
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mTEST SUMMARY[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+Total Tests Run:   14
+Tests Passed:      [0;32m14[0m
+Tests Failed:      [0;31m0[0m
+
+[0;32m╔════════════════════════════════════════╗[0m
+[0;32m║  ALL TESTS PASSED SUCCESSFULLY! ✓      ║[0m
+[0;32m║  Union filesystem is working correctly  ║[0m
+[0;32m╚════════════════════════════════════════╝[0m
+[2026-04-16 16:57:21] Cleaning up...
+rm -f mini_unionfs
+Clean complete!
+Compiling Mini Union FileSystem...
+gcc -Wall -Wextra -D_FILE_OFFSET_BITS=64 -I/usr/include/fuse3 -I/usr/include/fuse3  -o mini_unionfs mini_unionfs.c -lfuse3 -lpthread 
+Successfully compiled: mini_unionfs
+[2026-04-16 16:57:21] [H[2J[3J[0;34m
+╔══════════════════════════════════════════════════════════════╗
+║   Mini Union File System - Comprehensive Test Suite          ║
+║   Testing FUSE implementation with Copy-on-Write & Whiteout  ║
+╚══════════════════════════════════════════════════════════════╝
+[0m
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 1: SETUP[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+[0;34m[INFO][0m Checking dependencies...
+[0;32m[PASS][0m All dependencies found
+[0;34m[INFO][0m Compiling mini_unionfs...
+[0;32m[PASS][0m Compilation successful: /mnt/c/Users/Prajwal V/Downloads/cc 2 miniproject/cc 2 miniproject/mini_unionfs
+[0;34m[INFO][0m Setting up test directories...
+[0;34m[INFO][0m Cleaning up test directories...
+[0;32m[PASS][0m Cleanup complete
+[0;32m[PASS][0m Test directories created
+[0;34m[INFO][0m   Lower dir: /home/prajwal/unionfs_test/lower
+[0;34m[INFO][0m   Upper dir: /home/prajwal/unionfs_test/upper
+[0;34m[INFO][0m   Mount dir: /home/prajwal/unionfs_test/mount
+[0;34m[INFO][0m Mounting union filesystem...
+[0;31m[FAIL][0m Failed to mount filesystem
+
+[2026-04-16 16:57:21] [H[2J[3J[0;34m
+╔══════════════════════════════════════════════════════════════╗
+║   Mini Union File System - Comprehensive Test Suite          ║
+║   Testing FUSE implementation with Copy-on-Write & Whiteout  ║
+╚══════════════════════════════════════════════════════════════╝
+[0m
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 1: SETUP[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+[0;34m[INFO][0m Checking dependencies...
+[0;32m[PASS][0m All dependencies found
+[0;34m[INFO][0m Compiling mini_unionfs...
+[0;32m[PASS][0m Compilation successful: /mnt/c/Users/Prajwal V/Downloads/cc 2 miniproject/cc 2 miniproject/mini_unionfs
+[0;34m[INFO][0m Setting up test directories...
+[0;34m[INFO][0m Cleaning up test directories...
+[0;32m[PASS][0m Cleanup complete
+[0;32m[PASS][0m Test directories created
+[0;34m[INFO][0m   Lower dir: /home/prajwal/unionfs_test/lower
+[0;34m[INFO][0m   Upper dir: /home/prajwal/unionfs_test/upper
+[0;34m[INFO][0m   Mount dir: /home/prajwal/unionfs_test/mount
+[0;34m[INFO][0m Mounting union filesystem...
+[0;31m[FAIL][0m Failed to mount filesystem
+
+[2026-04-16 16:57:21] [H[2J[3J[0;34m
+╔══════════════════════════════════════════════════════════════╗
+║   Mini Union File System - Comprehensive Test Suite          ║
+║   Testing FUSE implementation with Copy-on-Write & Whiteout  ║
+╚══════════════════════════════════════════════════════════════╝
+[0m
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 1: SETUP[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+[0;34m[INFO][0m Checking dependencies...
+[0;32m[PASS][0m All dependencies found
+[0;34m[INFO][0m Compiling mini_unionfs...
+[0;32m[PASS][0m Compilation successful: /mnt/c/Users/Prajwal V/Downloads/cc 2 miniproject/cc 2 miniproject/mini_unionfs
+[0;34m[INFO][0m Setting up test directories...
+[0;34m[INFO][0m Cleaning up test directories...
+[0;32m[PASS][0m Cleanup complete
+[0;32m[PASS][0m Test directories created
+[0;34m[INFO][0m   Lower dir: /home/prajwal/unionfs_test/lower
+[0;34m[INFO][0m   Upper dir: /home/prajwal/unionfs_test/upper
+[0;34m[INFO][0m   Mount dir: /home/prajwal/unionfs_test/mount
+[0;34m[INFO][0m Mounting union filesystem...
+[0;32m[PASS][0m Filesystem mounted (PID: 2402)
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 2: BASIC OPERATIONS[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mRead file from lower layer[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+File does not exist: /home/prajwal/unionfs_test/mount/file1.txt
+[0;31m[FAIL][0m Read file from lower layer
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mDirectory listing shows merged view[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+File does not exist: /home/prajwal/unionfs_test/mount/file1.txt
+[0;31m[FAIL][0m Directory listing shows merged view
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mCreate new file in upper layer[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;31m[FAIL][0m Create new file in upper layer
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mCreate new directory in merged view[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;31m[FAIL][0m Create new directory in merged view
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mCreate files in new directory[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;31m[FAIL][0m Create files in new directory
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 3: ADVANCED FEATURES (CoW & Whiteout)[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mCopy-on-Write: Modify lower file[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;31m[FAIL][0m Copy-on-Write: Modify lower file
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mCopy-on-Write: Modify nested file from lower[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;31m[FAIL][0m Copy-on-Write: Modify nested file from lower
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mDelete lower file (create whiteout)[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;31m[FAIL][0m Delete lower file (create whiteout)
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mUpper layer files shadow lower layer[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;31m[FAIL][0m Upper layer files shadow lower layer
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 4: COMPLEX SCENARIOS[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mAccess nested directory from lower[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+File does not exist: /home/prajwal/unionfs_test/mount/subdir/nested.txt
+[0;31m[FAIL][0m Access nested directory from lower
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mDelete file created in upper layer[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;31m[FAIL][0m Delete file created in upper layer
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mDirectory listing reflects all changes[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;31m[FAIL][0m Directory listing reflects all changes
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mMultiple CoW operations on same file[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;31m[FAIL][0m Multiple CoW operations on same file
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mNested directory creation and removal[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+File does not exist: /home/prajwal/unionfs_test/upper/dir1/dir2/dir3/file.txt
+[0;31m[FAIL][0m Nested directory creation and removal
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 5: CLEANUP[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+[0;34m[INFO][0m Unmounting filesystem...
+[1;33m[WARN][0m Attempting lazy unmount...
+[0;34m[INFO][0m Cleaning up test directories...
+[0;32m[PASS][0m Cleanup complete
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mTEST SUMMARY[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+Total Tests Run:   14
+Tests Passed:      [0;32m0[0m
+Tests Failed:      [0;31m14[0m
+
+[0;31m╔════════════════════════════════════════╗[0m
+[0;31m║  SOME TESTS FAILED ✗                  ║[0m
+[0;31m║  Please review the output above        ║[0m
+[0;31m╚════════════════════════════════════════╝[0m
+
+test_unionfs.sh: line 65: /home/prajwal/unionfs_test/mount/newfile.txt: No such file or directory
+mkdir: cannot create directory ‘/home/prajwal/unionfs_test/mount/newdir’: No such file or directory
+test_unionfs.sh: line 65: /home/prajwal/unionfs_test/mount/newdir/file_in_newdir.txt: No such file or directory
+test_unionfs.sh: line 65: /home/prajwal/unionfs_test/mount/file1.txt: No such file or directory
+test_unionfs.sh: line 65: /home/prajwal/unionfs_test/mount/subdir/data.txt: No such file or directory
+rm: cannot remove '/home/prajwal/unionfs_test/mount/readme.txt': No such file or directory
+test_unionfs.sh: line 65: /home/prajwal/unionfs_test/upper/file1.txt: No such file or directory
+ls: cannot access '/home/prajwal/unionfs_test/mount': No such file or directory
+test_unionfs.sh: line 65: /home/prajwal/unionfs_test/mount/newfile2.txt: No such file or directory
+[2026-04-16 17:07:08] UI started
+[2026-04-16 17:08:01] Running make build
+[2026-04-16 17:08:02] Cleaning up...
+rm -f mini_unionfs
+Clean complete!
+Compiling Mini Union FileSystem...
+gcc -Wall -Wextra -D_FILE_OFFSET_BITS=64 -I/usr/include/fuse3 -I/usr/include/fuse3  -o mini_unionfs mini_unionfs.c -lfuse3 -lpthread 
+Successfully compiled: mini_unionfs
+[2026-04-16 17:08:55] Running make build
+[2026-04-16 17:08:56] Cleaning up...
+rm -f mini_unionfs
+Clean complete!
+Compiling Mini Union FileSystem...
+gcc -Wall -Wextra -D_FILE_OFFSET_BITS=64 -I/usr/include/fuse3 -I/usr/include/fuse3  -o mini_unionfs mini_unionfs.c -lfuse3 -lpthread 
+Successfully compiled: mini_unionfs
+[2026-04-16 17:09:00] Running test_unionfs.sh
+[2026-04-16 17:09:04] [H[2J[3J[0;34m
+╔══════════════════════════════════════════════════════════════╗
+║   Mini Union File System - Comprehensive Test Suite          ║
+║   Testing FUSE implementation with Copy-on-Write & Whiteout  ║
+╚══════════════════════════════════════════════════════════════╝
+[0m
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 1: SETUP[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+[0;34m[INFO][0m Checking dependencies...
+[0;32m[PASS][0m All dependencies found
+[0;34m[INFO][0m Compiling mini_unionfs...
+[0;32m[PASS][0m Compilation successful: /mnt/c/Users/Prajwal V/Downloads/cc 2 miniproject/cc 2 miniproject/mini_unionfs
+[0;34m[INFO][0m Setting up test directories...
+[0;34m[INFO][0m Cleaning up test directories...
+[0;32m[PASS][0m Cleanup complete
+[0;32m[PASS][0m Test directories created
+[0;34m[INFO][0m   Lower dir: /home/prajwal/unionfs_test/lower
+[0;34m[INFO][0m   Upper dir: /home/prajwal/unionfs_test/upper
+[0;34m[INFO][0m   Mount dir: /home/prajwal/unionfs_test/mount
+[0;34m[INFO][0m Mounting union filesystem...
+[0;32m[PASS][0m Filesystem mounted (PID: 2725)
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 2: BASIC OPERATIONS[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mRead file from lower layer[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Read file from lower layer
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mDirectory listing shows merged view[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Directory listing shows merged view
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mCreate new file in upper layer[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Create new file in upper layer
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mCreate new directory in merged view[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Create new directory in merged view
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mCreate files in new directory[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Create files in new directory
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 3: ADVANCED FEATURES (CoW & Whiteout)[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mCopy-on-Write: Modify lower file[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Copy-on-Write: Modify lower file
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mCopy-on-Write: Modify nested file from lower[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Copy-on-Write: Modify nested file from lower
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mDelete lower file (create whiteout)[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Delete lower file (create whiteout)
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mUpper layer files shadow lower layer[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Upper layer files shadow lower layer
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 4: COMPLEX SCENARIOS[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mAccess nested directory from lower[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Access nested directory from lower
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mDelete file created in upper layer[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Delete file created in upper layer
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mDirectory listing reflects all changes[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Directory listing reflects all changes
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mMultiple CoW operations on same file[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Multiple CoW operations on same file
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+TEST: [1;33mNested directory creation and removal[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;32m[PASS][0m Nested directory creation and removal
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mPHASE 5: CLEANUP[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+[0;34m[INFO][0m Unmounting filesystem...
+[0;32m[PASS][0m Filesystem unmounted
+[0;34m[INFO][0m Cleaning up test directories...
+[0;32m[PASS][0m Cleanup complete
+
+[0;34m═══════════════════════════════════════════════════════════[0m
+[1;33mTEST SUMMARY[0m
+[0;34m═══════════════════════════════════════════════════════════[0m
+Total Tests Run:   14
+Tests Passed:      [0;32m14[0m
+Tests Failed:      [0;31m0[0m
+
+[0;32m╔════════════════════════════════════════╗[0m
+[0;32m║  ALL TESTS PASSED SUCCESSFULLY! ✓      ║[0m
+[0;32m║  Union filesystem is working correctly  ║[0m
+[0;32m╚════════════════════════════════════════╝[0m
